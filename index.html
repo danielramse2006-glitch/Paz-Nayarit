@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#682575">
+<title>PAZ Nayarit — Propuesta visual</title>
+<meta name="description" content="Propuesta visual de sitio institucional para PAZ Nayarit. Personas, acciones y comunidad.">
+<style>
+:root{
+  --purple:#682575;
+  --purple-dark:#35123d;
+  --purple-soft:#8d4a99;
+  --sand:#f5efe7;
+  --cream:#fffaf3;
+  --coral:#ef8b6c;
+  --sun:#f6c85f;
+  --teal:#2f8f8a;
+  --ink:#261e29;
+  --muted:#746b76;
+  --white:#fff;
+  --line:rgba(56,29,61,.12);
+  --shadow:0 24px 70px rgba(58,27,64,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--cream);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font:inherit}
+.container{width:min(1180px,calc(100% - 34px));margin:auto}
+.demo{position:fixed;right:16px;bottom:16px;z-index:120;background:var(--purple-dark);color:white;padding:9px 13px;border-radius:999px;box-shadow:var(--shadow);font-size:10px;font-weight:900;letter-spacing:.12em}
+
+/* HEADER — intentionally light, unlike Tamaulipas */
+header{position:sticky;top:0;z-index:100;background:rgba(255,250,243,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{height:86px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:13px;font-weight:950;color:var(--purple-dark)}
+.brand-logo{width:68px;height:60px;object-fit:contain;background:white;border-radius:16px;padding:5px;box-shadow:0 10px 30px rgba(65,29,70,.10)}
+.brand small{display:block;font-size:9px;letter-spacing:.17em;color:var(--purple-soft);margin-top:2px}
+.links{display:flex;align-items:center;gap:24px;font-size:13px;font-weight:800}
+.links a:not(.cta){position:relative;padding:10px 0}
+.links a:not(.cta):after{content:"";position:absolute;left:0;right:100%;bottom:4px;height:3px;background:var(--coral);border-radius:99px;transition:.2s}
+.links a:not(.cta):hover:after{right:0}
+.links .cta{background:var(--purple);color:white;padding:12px 18px;border-radius:999px;box-shadow:0 10px 25px rgba(104,37,117,.20)}
+.menu{display:none;width:48px;height:48px;border:0;border-radius:15px;background:var(--purple);color:#fff;font-size:22px}
+
+/* HERO — cream canvas + color collage */
+.hero{position:relative;overflow:hidden;padding:78px 0 92px;background:
+  linear-gradient(90deg,transparent 0 68%,rgba(239,139,108,.16) 68% 100%),
+  var(--cream)}
+.hero:before{content:"";position:absolute;left:-160px;top:-160px;width:420px;height:420px;border-radius:50%;background:rgba(246,200,95,.24)}
+.hero:after{content:"";position:absolute;left:0;bottom:0;width:42%;height:18px;background:linear-gradient(90deg,var(--purple),var(--coral),var(--sun));border-radius:0 20px 0 0}
+.hero-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:58px;align-items:center;position:relative;z-index:2}
+.eyebrow{font-size:11px;font-weight:950;letter-spacing:.23em;text-transform:uppercase;color:var(--teal)}
+.hero h1{font-size:clamp(58px,8vw,108px);line-height:.85;letter-spacing:-.07em;color:var(--purple-dark);margin:22px 0 28px;max-width:720px}
+.hero h1 .accent{display:inline-block;color:var(--coral);transform:rotate(-1deg)}
+.hero p{max-width:600px;font-size:17px;line-height:1.78;color:var(--muted)}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:14px 21px;font-weight:900;font-size:13px}
+.btn.primary{background:var(--purple);color:#fff}
+.btn.outline{border:1px solid rgba(104,37,117,.27);color:var(--purple);background:rgba(255,255,255,.55)}
+.hero-art{position:relative;min-height:640px}
+.hero-photo{position:absolute;right:1%;top:10px;width:72%;height:590px;border-radius:38px 38px 140px 38px;object-fit:cover;object-position:center 42%;box-shadow:0 35px 90px rgba(53,18,61,.22);z-index:4}
+.block{position:absolute;border-radius:34px}
+.block.purple{width:44%;height:210px;left:4%;top:62px;background:var(--purple);transform:rotate(-4deg);z-index:1}
+.block.coral{width:39%;height:195px;left:3%;bottom:78px;background:var(--coral);transform:rotate(5deg);z-index:2}
+.block.teal{width:35%;height:180px;right:-2%;bottom:0;background:var(--teal);transform:rotate(-5deg);z-index:2}
+.sun-disc{position:absolute;left:23%;top:10px;width:150px;height:150px;border-radius:50%;background:var(--sun);z-index:3;box-shadow:0 0 0 18px rgba(246,200,95,.18)}
+.hero-note{position:absolute;left:0;bottom:18px;z-index:6;background:#fff;border:1px solid var(--line);border-radius:26px;padding:20px 23px;width:280px;box-shadow:var(--shadow)}
+.hero-note b{display:block;font-size:22px;color:var(--purple)}
+.hero-note span{font-size:12px;line-height:1.5;color:var(--muted)}
+
+/* COLOR STRIP / metrics */
+.color-strip{margin-top:-30px;position:relative;z-index:10}
+.metrics{display:grid;grid-template-columns:1.15fr .85fr .95fr;gap:16px}
+.metric{min-height:150px;border-radius:30px;padding:26px 28px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow)}
+.metric:nth-child(1){background:var(--purple);color:#fff}
+.metric:nth-child(2){background:var(--sun);color:var(--purple-dark)}
+.metric:nth-child(3){background:var(--teal);color:#fff}
+.metric small{font-size:10px;text-transform:uppercase;letter-spacing:.18em;font-weight:900;opacity:.75}
+.metric strong{font-size:34px;line-height:1}
+.metric p{margin:8px 0 0;font-size:13px;line-height:1.55;opacity:.82}
+
+section{padding:96px 0}
+.section-head{display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:end;margin-bottom:40px}
+.section-head h2{font-size:clamp(42px,5.4vw,72px);line-height:.95;letter-spacing:-.05em;margin:11px 0 0;color:var(--purple-dark)}
+.section-head p{margin:0;color:var(--muted);font-size:16px;line-height:1.8}
+
+/* IDENTITY — bold editorial blocks */
+.identity-section{background:var(--purple-dark);color:white;position:relative;overflow:hidden}
+.identity-section:before{content:"NAYARIT";position:absolute;right:-40px;top:55px;font-size:170px;font-weight:1000;letter-spacing:-.08em;color:rgba(255,255,255,.035)}
+.identity-section .section-head h2{color:white}
+.identity-section .section-head p{color:rgba(255,255,255,.65)}
+.identity-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:20px}
+.identity-main{background:var(--sand);color:var(--ink);border-radius:38px;padding:42px;display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:center;min-height:440px;position:relative;overflow:hidden}
+.identity-main:after{content:"";position:absolute;right:-50px;bottom:-60px;width:230px;height:230px;border-radius:50%;background:var(--coral)}
+.identity-logo{width:205px;background:#fff;border-radius:30px;padding:20px;box-shadow:0 16px 35px rgba(64,29,70,.13);position:relative;z-index:2}
+.identity-copy{position:relative;z-index:2}
+.identity-copy .label{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--purple);font-weight:950}
+.identity-copy h3{font-size:46px;line-height:.96;margin:12px 0 15px;color:var(--purple-dark)}
+.identity-copy p{color:var(--muted);line-height:1.72;margin:0}
+.values{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.value{border-radius:32px;padding:28px;min-height:210px;position:relative;overflow:hidden}
+.value:nth-child(1){background:var(--coral);color:var(--purple-dark)}
+.value:nth-child(2){background:var(--teal);color:white}
+.value:nth-child(3){grid-column:1/-1;background:var(--sun);color:var(--purple-dark)}
+.value .num{font-size:52px;line-height:1;font-weight:1000;opacity:.35}
+.value h3{font-size:24px;margin:18px 0 8px}
+.value p{margin:0;line-height:1.62;font-size:14px;opacity:.8}
+
+/* NEWS — editorial magazine */
+.news{background:var(--sand)}
+.news-layout{display:grid;grid-template-columns:1.25fr .75fr;gap:22px}
+.feature{background:#fff;border-radius:38px;overflow:hidden;box-shadow:0 18px 50px rgba(61,31,66,.08)}
+.feature-img{display:grid;grid-template-columns:1.1fr .9fr;min-height:460px}
+.feature-img img{width:100%;height:100%;object-fit:cover}
+.feature-copy{padding:38px;display:flex;flex-direction:column;justify-content:center}
+.tag{font-size:10px;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:var(--teal)}
+.feature-copy h3{font-size:40px;line-height:1.03;letter-spacing:-.04em;margin:13px 0 15px;color:var(--purple-dark)}
+.feature-copy p{color:var(--muted);line-height:1.72;margin:0}
+.feature-copy small{margin-top:22px;color:var(--purple);font-weight:800}
+.news-side{display:grid;gap:22px}
+.mini{border-radius:32px;padding:25px;min-height:218px;display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center}
+.mini:nth-child(1){background:var(--purple);color:white}
+.mini:nth-child(2){background:white;border:1px solid var(--line)}
+.mini img{width:110px;height:145px;object-fit:cover;border-radius:20px}
+.mini h3{font-size:22px;line-height:1.05;margin:8px 0}
+.mini p{font-size:13px;line-height:1.55;margin:0;opacity:.76}
+
+/* MUNICIPALITIES — split ribbon */
+.municipios{background:#fff}
+.muni-shell{display:grid;grid-template-columns:.62fr 1.38fr;border-radius:40px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+.muni-intro{background:linear-gradient(160deg,var(--purple),var(--purple-dark));color:white;padding:48px;position:relative;overflow:hidden}
+.muni-intro:after{content:"20";position:absolute;right:-16px;bottom:-48px;font-size:190px;font-weight:1000;color:rgba(255,255,255,.08)}
+.muni-intro h2{font-size:58px;line-height:.92;letter-spacing:-.055em;margin:18px 0 16px}
+.muni-intro p{color:rgba(255,255,255,.7);line-height:1.65}
+.muni-list{padding:40px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;background:var(--cream)}
+.pill{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:16px;background:#fff;border:1px solid var(--line);font-size:12px;font-weight:800;color:var(--purple-dark)}
+.pill:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--coral);flex:0 0 auto}
+
+/* CONTACT — teal canvas + purple card */
+.contact{background:var(--teal);position:relative;overflow:hidden}
+.contact:before{content:"";position:absolute;right:-100px;top:-100px;width:360px;height:360px;border-radius:50%;background:rgba(246,200,95,.25)}
+.contact-box{display:grid;grid-template-columns:1fr .88fr;gap:55px;align-items:center;position:relative;z-index:2}
+.contact .eyebrow{color:var(--sun)}
+.contact h2{font-size:clamp(50px,6vw,82px);line-height:.9;letter-spacing:-.055em;color:white;margin:14px 0 20px}
+.contact p{color:rgba(255,255,255,.76);line-height:1.75;max-width:610px}
+.contact .btn.primary{background:var(--sun);color:var(--purple-dark)}
+.contact .btn.outline{border-color:rgba(255,255,255,.42);color:white;background:transparent}
+.contact-card{background:var(--purple-dark);color:white;border-radius:36px;padding:31px;box-shadow:0 32px 80px rgba(35,12,42,.25)}
+.contact-row{padding:17px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.contact-row:last-of-type{border:0}
+.contact-row small{display:block;color:rgba(255,255,255,.55);font-size:10px;text-transform:uppercase;letter-spacing:.16em}
+.contact-row b{display:block;margin-top:5px;font-size:17px}
+.wa{margin-top:20px;width:100%;background:var(--coral);color:var(--purple-dark)}
+footer{background:#1a0d1e;color:rgba(255,255,255,.62);padding:30px 0}
+.footer-row{display:flex;justify-content:space-between;gap:20px;font-size:11px}
+.footer-row b{color:#fff}
+
+@media(max-width:960px){
+ .links{display:none}.menu{display:block}
+ .hero-grid,.section-head,.identity-grid,.contact-box{grid-template-columns:1fr}
+ .hero-art{min-height:600px;max-width:650px;margin:auto;width:100%}
+ .metrics{grid-template-columns:1fr 1fr}.metric:first-child{grid-column:1/-1}
+ .identity-main{grid-template-columns:1fr}.values{grid-template-columns:1fr 1fr}
+ .news-layout{grid-template-columns:1fr}.news-side{grid-template-columns:1fr 1fr}
+ .muni-shell{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+ .container{width:min(100% - 24px,1180px)}
+ .nav{height:76px}.brand-logo{width:58px;height:52px}.brand>div{display:none}
+ .hero{padding:54px 0 70px;background:var(--cream)}
+ .hero h1{font-size:58px}.hero p{font-size:15px}
+ .hero-art{min-height:515px;margin-top:10px}
+ .hero-photo{width:78%;height:450px;border-radius:28px 28px 90px 28px}
+ .block.purple{width:45%;height:150px;top:54px}.block.coral{height:145px;bottom:75px}.block.teal{height:130px}
+ .sun-disc{width:105px;height:105px;left:20%}.hero-note{width:230px;padding:16px;bottom:5px}.hero-note b{font-size:19px}
+ .color-strip{margin-top:-18px}.metrics{grid-template-columns:1fr}.metric:first-child{grid-column:auto}
+ section{padding:72px 0}
+ .section-head{gap:18px}.section-head h2{font-size:45px}
+ .identity-main{padding:28px}.identity-copy h3{font-size:38px}.identity-logo{width:170px}
+ .values{grid-template-columns:1fr}.value:nth-child(3){grid-column:auto}
+ .feature-img{grid-template-columns:1fr}.feature-img img{height:320px}.feature-copy{padding:27px}.feature-copy h3{font-size:32px}
+ .news-side{grid-template-columns:1fr}.mini{grid-template-columns:92px 1fr}.mini img{width:92px;height:125px}
+ .muni-intro{padding:34px}.muni-intro h2{font-size:48px}.muni-list{grid-template-columns:1fr;padding:26px}
+ .contact{padding-bottom:110px}.contact-card{padding:26px}.footer-row{display:block;line-height:1.8}.demo{font-size:9px}
+}
+</style>
+</head>
+<body>
+<div class="demo">PROPUESTA VISUAL · DEMO</div>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#inicio"><img class="brand-logo" src="assets/logo-paz.png" alt="PAZ"><div>PAZ Nayarit<small>COMITÉ DIRECTIVO ESTATAL</small></div></a>
+    <nav class="links"><a href="#nosotros">Quiénes somos</a><a href="#actualidad">Actualidad</a><a href="#municipios">Municipios</a><a href="#contacto">Contacto</a><a class="cta" href="#contacto">Participa</a></nav>
+    <button class="menu" aria-label="Menú" onclick="document.getElementById('mobile').hidden=!document.getElementById('mobile').hidden">☰</button>
+  </div>
+  <div id="mobile" hidden style="background:#fffaf3;border-top:1px solid rgba(56,29,61,.10);padding:0 18px 18px"><div class="container" style="display:grid;gap:13px;font-weight:850;color:#35123d"><a href="#nosotros">Quiénes somos</a><a href="#actualidad">Actualidad</a><a href="#municipios">Municipios</a><a href="#contacto">Contacto</a></div></div>
+</header>
+<main>
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">PAZ · NAYARIT</div>
+      <h1>PERSONAS.<br>ACCIONES.<br><span class="accent">COMUNIDAD.</span></h1>
+      <p>Una propuesta ciudadana con presencia en Nayarit para escuchar, dialogar, organizar y construir soluciones desde nuestras comunidades.</p>
+      <div class="actions"><a class="btn primary" href="#nosotros">Conoce el proyecto</a><a class="btn outline" href="#contacto">Quiero participar</a></div>
+    </div>
+    <div class="hero-art">
+      <div class="sun-disc"></div>
+      <div class="block purple"></div><div class="block coral"></div><div class="block teal"></div>
+      <img class="hero-photo" src="assets/personas-acciones-comunidad.jpg" alt="Personas, acciones y comunidad — PAZ Nayarit">
+      <div class="hero-note"><b>#NayaritMerecePAZ</b><span>Una identidad cercana, comunitaria y propia del estado.</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="container color-strip">
+  <div class="metrics">
+    <article class="metric"><small>Identidad estatal</small><div><strong>PAZ Nayarit</strong><p>Una presencia visual propia, sin perder la identidad institucional.</p></div></article>
+    <article class="metric"><small>Presencia</small><div><strong>20 municipios</strong><p>Contenido y participación desde todo el estado.</p></div></article>
+    <article class="metric"><small>Propósito</small><div><strong>Comunidad</strong><p>Escuchar, organizar y construir juntos.</p></div></article>
+  </div>
+</div>
+
+<section class="identity-section" id="nosotros">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">Quiénes somos</div><h2>Una identidad pensada para Nayarit.</h2></div>
+      <p>El morado sigue siendo el eje institucional, pero esta propuesta suma tonos cálidos y frescos inspirados en la comunidad, el paisaje y la energía de Nayarit.</p>
+    </div>
+    <div class="identity-grid">
+      <article class="identity-main">
+        <img class="identity-logo" src="assets/logo-paz.png" alt="Logo PAZ Nayarit">
+        <div class="identity-copy"><div class="label">Identidad institucional</div><h3>Nayarit tiene su propia voz.</h3><p>Un diseño más editorial, luminoso y dinámico: morado como base, coral como acento humano, amarillo como energía y turquesa como equilibrio visual.</p></div>
+      </article>
+      <div class="values">
+        <article class="value"><div class="num">01</div><h3>Escuchar</h3><p>Abrir espacios para conocer las necesidades, ideas y propuestas de la ciudadanía.</p></article>
+        <article class="value"><div class="num">02</div><h3>Participar</h3><p>Impulsar actividades y mecanismos de colaboración desde cada municipio.</p></article>
+        <article class="value"><div class="num">03</div><h3>Construir comunidad</h3><p>Convertir el diálogo y la organización en acciones cercanas que fortalezcan el tejido social. México merece PAZ.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="news" id="actualidad">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">Actualidad</div><h2>Historias, actividades y comunicados.</h2></div>
+      <p>Una sección con estilo de revista digital para que las publicaciones de Nayarit tengan mayor presencia visual y no se sientan como simples tarjetas repetidas.</p>
+    </div>
+    <div class="news-layout">
+      <article class="feature">
+        <div class="feature-img">
+          <img src="assets/paz-para-ti.jpg" alt="¿Qué significa PAZ para ti?">
+          <div class="feature-copy"><div class="tag">Comunidad</div><h3>¿Qué significa para ti vivir en PAZ?</h3><p>Un espacio para escuchar a las familias y conocer qué significa la paz desde la experiencia cotidiana de las comunidades.</p><small>#NayaritMerecePAZ</small></div>
+        </div>
+      </article>
+      <div class="news-side">
+        <article class="mini"><img src="assets/comunidad.jpg" alt="Comunidad en Nayarit"><div><div class="tag" style="color:#f6c85f">Participación</div><h3>Personas que construyen comunidad</h3><p>La participación empieza en lo local: escuchar, encontrarnos y trabajar juntos.</p></div></article>
+        <article class="mini"><img src="assets/personas-acciones-comunidad.jpg" alt="PAZ Nayarit"><div><div class="tag">Institucional</div><h3>México merece PAZ</h3><p>Información, agenda y presencia territorial en un mismo espacio digital.</p></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="municipios" id="municipios">
+  <div class="container">
+    <div class="muni-shell">
+      <div class="muni-intro"><div class="eyebrow" style="color:#f6c85f">Presencia estatal</div><h2>20 municipios,<br>una comunidad.</h2><p>El portal queda preparado para organizar noticias, enlaces, eventos y participación de manera territorial.</p></div>
+      <div class="muni-list">
+        <span class="pill">Acaponeta</span><span class="pill">Ahuacatlán</span><span class="pill">Amatlán de Cañas</span><span class="pill">Bahía de Banderas</span><span class="pill">Compostela</span><span class="pill">Del Nayar</span><span class="pill">Huajicori</span><span class="pill">Ixtlán del Río</span><span class="pill">Jala</span><span class="pill">La Yesca</span><span class="pill">Rosamorada</span><span class="pill">Ruíz</span><span class="pill">San Blas</span><span class="pill">San Pedro Lagunillas</span><span class="pill">Santa María del Oro</span><span class="pill">Santiago Ixcuintla</span><span class="pill">Tecuala</span><span class="pill">Tepic</span><span class="pill">Tuxpan</span><span class="pill">Xalisco</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="container contact-box">
+    <div><div class="eyebrow">Participa</div><h2>Nayarit merece PAZ.</h2><p>Conoce las actividades de PAZ Nayarit, comparte tus ideas y ponte en contacto con el Comité Directivo Estatal.</p><div class="actions"><a class="btn primary" href="tel:+523112265721">Llamar</a><a class="btn outline" href="mailto:partidopaznayarit@gmail.com">Enviar correo</a></div></div>
+    <div class="contact-card">
+      <div class="contact-row"><small>Teléfono</small><b>311 226 5721</b></div>
+      <div class="contact-row"><small>Correo</small><b>partidopaznayarit@gmail.com</b></div>
+      <div class="contact-row"><small>Ubicación</small><b>Nayarit, México</b></div>
+      <a class="btn wa" target="_blank" rel="noopener" href="https://wa.me/523112265721">Contactar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="container footer-row"><div><b>PAZ Nayarit</b> · Propuesta visual de portal institucional</div><div>Demo de presentación · contenido sujeto a validación oficial</div></div></footer>
+<script>
+for(const a of document.querySelectorAll('#mobile a')) a.addEventListener('click',()=>document.getElementById('mobile').hidden=true);
+</script>
+</body>
+</html>
